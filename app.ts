@@ -1,4 +1,4 @@
-import Server from "./src/server.ts";
+import Server from "./src/server";
 
 
 const server = new Server();

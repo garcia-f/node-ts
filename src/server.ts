@@ -4,7 +4,6 @@ import morgan from "morgan";
 import helmet from "helmet";
 
 
-import equipamentRouter from "./routes/index.ts"; 
 import db, { envs } from "./config/db.ts";
 
 
