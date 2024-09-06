@@ -1,24 +1,20 @@
 import { Sequelize, Dialect } from "sequelize";
-import "dotenv/config";
-import * as env from "env-var";
-
-export const envs = {
-    PORT: env.get('PORT').required().asPortNumber(),
-    DB_HOST: env.get('DB_HOST').required().asString(),
-    DB_PORT: env.get('DB_PORT').required().asPortNumber(),
-    DB_USER: env.get('DB_USER').required().asString(),
-    DB_PASSWORD: env.get('DB_PASSWORD').asString(),
-    DB_NAME: env.get('DB_NAME').required().asString(),
-    // DB_DIALECT: env.get('DB_DIALECT').required().asString(),
-    DB_DIALECT: process.env.DB_DIALECT as Dialect
-}
+import { envs } from '../environments/environments';
 
 
+const {
+    DB_NAME,
+    DB_USER,
+    DB_PASSWORD,
+    DB_HOST,
+    DB_DIALECT
 
-const db = new Sequelize(envs.DB_NAME, envs.DB_USER, envs.DB_PASSWORD, {
-    host: envs.DB_HOST,
-    dialect: envs.DB_DIALECT,
-    // logging: false
+} = envs;
+
+
+const db = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+    host: DB_HOST,
+    dialect: DB_DIALECT,
 });
 
 export default db;
