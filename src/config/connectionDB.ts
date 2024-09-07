@@ -1,4 +1,5 @@
 import db  from "./db";
+import { associations } from "./relations";
 
 export const connectionDB = async () => {
     db.authenticate()
@@ -10,13 +11,13 @@ export const connectionDB = async () => {
                     console.log('Base de datos sincronizada');
                 })
 
-            // associations()
-            //     .then((res) => {
-            //         console.log(res);
-            //     })
-            //     .catch((err) => {
-            //         console.log(err);
-            //     })
+            associations()
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
     })
     .catch(err => {
         console.log(err);

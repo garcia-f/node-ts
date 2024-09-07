@@ -4,7 +4,6 @@ import db from '../config/db';
 
 
 
-
 class ProgressModel extends Model<Progress> implements Progress{
     public id!: number
 }
@@ -18,3 +17,6 @@ ProgressModel.init({
         allowNull: false
     }
 },{ sequelize: db, tableName: "progress" });
+
+
+export { ProgressModel }

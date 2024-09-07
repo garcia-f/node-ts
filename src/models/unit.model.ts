@@ -1,17 +1,17 @@
-import { DataTypes, Model } from 'sequelize';
-import { Exercise } from '../interfaces/exercise.interface';
+import { DataType, DataTypes, Model } from "sequelize";
+import { Unit } from '../interfaces/unit.interface';
 import db from "../config/db";
 
 
-class ExerciseModel extends Model<Exercise> implements Exercise {
+class UnitModel extends Model<Unit> implements Unit {
     public id!: number;
     public name!: string;
     public description!: string;
-    public code!: string
+    public title!: string;
+    public icon!: string;
 }
 
-
-ExerciseModel.init({
+UnitModel.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -25,10 +25,15 @@ ExerciseModel.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    code: {
+    title: {
+        type: DataTypes.STRING,
+        allowNull:false
+    },
+    icon: {
         type: DataTypes.STRING,
         allowNull: false
     }
-}, { sequelize: db, tableName: "exercise" });
+},{ sequelize: db, tableName: "unit"});
 
-export { ExerciseModel }
+
+export { UnitModel }
