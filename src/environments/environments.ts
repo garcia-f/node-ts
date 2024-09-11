@@ -2,6 +2,7 @@ import { Dialect } from "sequelize";
 import "dotenv/config";
 import * as env from "env-var";
 
+
 export const envs = {
     PORT: env.get('PORT').required().asPortNumber(),
     DB_HOST: env.get('DB_HOST').required().asString(),
@@ -9,5 +10,6 @@ export const envs = {
     DB_USER: env.get('DB_USER').required().asString(),
     DB_PASSWORD: env.get('DB_PASSWORD').asString(),
     DB_NAME: env.get('DB_NAME').required().asString(),
+    DB_SECRET: env.get('DB_SECRET').required().asString(),
     DB_DIALECT: process.env.DB_DIALECT as Dialect
 }

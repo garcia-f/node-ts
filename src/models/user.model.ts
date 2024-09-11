@@ -3,6 +3,7 @@ import { User, Level } from '../interfaces/user.interface';
 import db from '../config/db';
 
 class UserModel extends Model<User> implements User {
+    // TODO: hay otro forma de hacer
     public id!: number
     public username!: string
     public email!: string
