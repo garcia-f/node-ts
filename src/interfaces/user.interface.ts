@@ -11,5 +11,6 @@ export interface User {
     username: string,
     email: string,
     password: string,
-    level: Level
+    level: Level,
+    progressId?: number;
 }

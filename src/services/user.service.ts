@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import { hashString } from '../utils/hash';
-import { User, Level } from "../interfaces/user.interface";
+import { User } from "../interfaces/user.interface";
 import { UserModel } from "../models/user.model";
 import { UnitModel } from "../models/unit.model";
 import { ProgressModel } from "../models/progress.model";
@@ -63,7 +63,6 @@ class UserService {
         return user;
     }
 
-    // TODO: solucionar esto
     public async createUser({ password, ...data }: User) {
         const hashedPassword = await hashString(password);
         const user = await UserModel.create({...data, password: hashedPassword});
@@ -81,3 +80,5 @@ class UserService {
     }
 
 }
+
+export default new UserService()
