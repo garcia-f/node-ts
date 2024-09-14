@@ -12,7 +12,7 @@ import themeRouter from "./routes/theme.routes";
 import progressRouter from "./routes/progress.routes";
 import exerciseRouter from "./routes/exercise.routes";
 import observationRouter from "./routes/observation.routes";
-import unitProgresRouter from "./routes/unit_progress.routes";
+import unitProgressRouter from "./routes/unit_progress.routes";
 import themeProgressRouter from "./routes/theme_progress.routes";
 import exerciseProgressRouter from "./routes/exercise_progress.routes";
 
@@ -43,14 +43,15 @@ class Server {
     }
 
     routes(): void {
-        this.app.use('/user', userRouter)
-        this.app.use('/unit', unitRouter)
-        this.app.use('/theme', themeRouter)
-        this.app.use('/exercise', exerciseRouter)
-        this.app.use('/observation', observationRouter)
-        this.app.use('/progress', progressRouter)
-        this.app.use('/theme_progress', themeProgressRouter)
-        this.app.use('/exercise_progress', exerciseProgressRouter)
+        this.app.use('/user', userRouter);
+        this.app.use('/unit', unitRouter);
+        this.app.use('/theme', themeRouter);
+        this.app.use('/exercise', exerciseRouter);
+        this.app.use('/observation', observationRouter);
+        this.app.use('/progress', progressRouter);
+        this.app.use('/unit_progress', unitProgressRouter);
+        this.app.use('/theme_progress', themeProgressRouter);
+        this.app.use('/exercise_progress', exerciseProgressRouter);
     }
 
     listen(): void {
