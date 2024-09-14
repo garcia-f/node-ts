@@ -7,7 +7,7 @@ import { Table } from "../interfaces/table.interface";
 class UnitProgressController {
     constructor() {}
 
-    public async createUnitProgres(req: Request, res: Response) {
+    public async createUnitProgress(req: Request, res: Response) {
         try {
             const data: Table = req.body;
             const newUnitProgress = await UnitProgressService.createUnitProgress( data );

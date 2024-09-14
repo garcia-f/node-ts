@@ -6,7 +6,7 @@ import progressService from "../services/progress.service";
 class ProgressController {
     constructor() {}
 
-    public async getAllProgress(req: Request, res: Response) {
+    public async getUserProgress(req: Request, res: Response) {
         try {
             const { id } = req.params;
             const progress = await progressService.findAllUserProgress( parseInt( id ) );

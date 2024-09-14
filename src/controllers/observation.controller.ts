@@ -23,7 +23,7 @@ class ObservationController {
         }
     }
 
-    public async updateObsevation(req: Request, res: Response) {
+    public async updateObservation(req: Request, res: Response) {
         try {
             const { id } = req.params;
             const data: Observation = req.body;

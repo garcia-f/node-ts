@@ -1,7 +1,6 @@
 import { Response, Request } from "express";
 import ThemeProgressService from "../services/theme_progress.service";
 import { Table } from "../interfaces/table.interface";
-import { deleteThemeProgress } from './temaprogreso';
 
 
 
