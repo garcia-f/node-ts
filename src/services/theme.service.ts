@@ -28,6 +28,11 @@ class ThemeService {
         return oneTheme;
     }
 
+    public async createThemeModel( data: Theme ) {
+        const newTheme = await ThemeModel.create( data );
+        return newTheme;
+    }
+
     public async updateThemeModel( id: number, data: Theme) {
         const updatedTheme = await ThemeModel.update(data, { where: { id } });
         return updatedTheme;

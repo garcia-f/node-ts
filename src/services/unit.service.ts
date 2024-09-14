@@ -14,7 +14,8 @@ class UnitService {
                 model: ThemeModel,
                 attributes: ["id", "name", "descriptiton"],
             }
-        })
+        });
+        return allUnits;
     }
 
     public async getUnitById( id: number ) {
@@ -22,22 +23,21 @@ class UnitService {
         return oneUnit;
     }
 
-    // TODO: ver esto
+    
     public async createUnitModel( data: Unit ) {
         const newUnit = await UnitModel.create( data );
         return newUnit;
     }
 
-    // TODO: ver esto
     public async updateUnitModel( id: number, data: Unit ) {
         const updatedUnit = await UnitModel.update(data, { where: { id } });
         return updatedUnit;
     }
 
 
-    // TODO: ver esto
     public async deleteUnitModel( id: number ) {
-        const deleteUnit = await UnitModel.destroy({ where: { id } })
+        const deleteUnit = await UnitModel.destroy({ where: { id } });
+        return deleteUnit;
     }
 
 

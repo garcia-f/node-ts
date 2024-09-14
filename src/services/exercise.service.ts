@@ -8,13 +8,14 @@ class ExerciseService {
 
     constructor() {}
 
-    public async findAllExercises() {
+    public async getAllExercises() {
         const allExercises = await ExerciseModel.findAll();
         return allExercises;
     }
 
     public async getExerciseById( id: number ) {
         const oneExercise = await ExerciseModel.findByPk( id )
+        return oneExercise;
     }
 
     public async createExerciseModel( data: Exercise ) {

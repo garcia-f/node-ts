@@ -7,9 +7,7 @@ import { ThemeProgressTable } from "../models/theme_progress.table";
 import { Includeable } from "sequelize";
 import { User } from "../interfaces/user.interface";
 
-interface NewUser {
-    id: number
-}
+
 
 class ProgressService {
     constructor() {}
@@ -45,15 +43,11 @@ class ProgressService {
         if (!user) {
             return null
         }
-    
         const newProgress = await ProgressModel.create({ id: newUser.id });
-    
         if (!newProgress) {
             return null
         }
-    
         await user.update({ progressId: newProgress.id });
-    
         return newProgress;
     }
 

@@ -49,17 +49,13 @@ class UserService {
 
     public async getUserForLogin(email: string, password: string) {
         const user = await UserModel.findOne({ where: { email: email } });
-
         if (!user) {
             return null;
         }
-
         const isInvalidPassword = await bcrypt.compare(password, user.password);
-
         if (!isInvalidPassword) {
             return null;
         }
-
         return user;
     }
 
@@ -74,7 +70,7 @@ class UserService {
         return brand
     }
 
-    public async deleteBrand(id: number) {
+    public async deleteUser(id: number) {
         const brand = await UserModel.destroy({ where: { id } });
         return brand
     }
