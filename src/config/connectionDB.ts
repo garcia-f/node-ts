@@ -6,7 +6,7 @@ export const connectionDB = async () => {
         .then(() => {
             console.log('Conectado a la base de datos');
 
-            db.sync({ alter: true })
+            db.sync({ alter: true, logging: false })
                 .then(() => {
                     console.log('Base de datos sincronizada');
                 })

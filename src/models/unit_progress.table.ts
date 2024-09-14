@@ -32,6 +32,6 @@ UnitProgressTable.init({
         defaultValue: false,
         allowNull: false
     }
-},{ sequelize: db, tableName: "unit_progress"});
+}, { sequelize: db, tableName: "unit_progress"});
 
 export { UnitProgressTable }

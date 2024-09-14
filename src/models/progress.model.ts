@@ -16,7 +16,7 @@ ProgressModel.init({
         autoIncrement: true,
         allowNull: false
     }
-},{ sequelize: db, tableName: "progress" });
+}, { sequelize: db, tableName: "progress" });
 
 
 export { ProgressModel }

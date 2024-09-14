@@ -8,6 +8,11 @@ import { UnitProgressTable } from "../models/unit_progress.table";
 import { ThemeProgressTable } from "../models/theme_progress.table";
 import { ExerciseProgressTable } from "../models/exercise_progress.table";
 
+import { QuestionModel } from "../models/question.model";
+import { OptionModel } from "../models/option.model";
+import { EvaluationModel } from "../models/evaluation.model";
+import { LevelModel } from "../models/level.model";
+import { EvaluationResponsesTable } from "../models/evaluation_responses.table";
 
 
 export const associations = () => {
@@ -40,11 +45,28 @@ export const associations = () => {
                 foreignKey: 'observationsId',
                 sourceKey: 'id'
             })
-
             ExerciseProgressTable.belongsTo(ObservationModel, {
                 foreignKey: 'observationsId',
                 targetKey: 'id'
             })
+            
+            LevelModel.hasMany(UserModel, { foreignKey: "levelId" });
+            UserModel.belongsTo(LevelModel, { foreignKey: "levelId" });
+
+            LevelModel.hasMany(QuestionModel, { foreignKey: "levelId" });
+            QuestionModel.belongsTo(LevelModel, { foreignKey: "levelId" });
+
+            QuestionModel.hasMany(OptionModel, { foreignKey: "questionId" });
+            OptionModel.belongsTo(QuestionModel, { foreignKey: "questionId" });
+
+            LevelModel.hasMany(QuestionModel, { foreignKey: "levelId" });
+            QuestionModel.hasMany(LevelModel, { foreignKey: "levelId" });
+
+            UserModel.hasMany(EvaluationModel, { foreignKey: "userId" });
+            EvaluationModel.belongsTo(UserModel, { foreignKey: "userId" });
+
+            EvaluationModel.belongsToMany(OptionModel, { through: EvaluationResponsesTable });
+            OptionModel.belongsToMany(EvaluationModel, { through: EvaluationResponsesTable });
 
             res({ message: "Relaciones establecidas" });
 

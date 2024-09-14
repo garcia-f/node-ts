@@ -32,6 +32,6 @@ ExerciseProgressTable.init({
         defaultValue: false,
         allowNull: false
     }
-},{ sequelize: db, tableName: "exercise_progress"});
+}, { sequelize: db, tableName: "exercise_progress" });
 
 export { ExerciseProgressTable }

@@ -33,7 +33,7 @@ UnitModel.init({
         type: DataTypes.STRING,
         allowNull: false
     }
-},{ sequelize: db, tableName: "unit"});
+}, { sequelize: db, tableName: "unit"});
 
 
 export { UnitModel }

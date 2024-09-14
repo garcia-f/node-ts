@@ -24,7 +24,7 @@ ThemeModel.init({
         type: DataTypes.TEXT,
         allowNull: false
     }
-},{ sequelize: db, tableName: "theme" });
+}, { sequelize: db, tableName: "theme" });
 
 
 export { ThemeModel }

@@ -31,7 +31,7 @@ ObservationModel.init({
         defaultValue: 0,
         allowNull: false
     }
-},{sequelize: db, tableName: "observation"});
+}, {sequelize: db, tableName: "observation" });
 
 
 export { ObservationModel }

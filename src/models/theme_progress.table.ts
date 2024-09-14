@@ -1,4 +1,4 @@
-import { DataType, DataTypes, Model } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 import  db  from "../config/db";
 import { Table } from '../interfaces/table.interface';
 import { ThemeModel } from "../models/theme.model"
@@ -31,6 +31,6 @@ ThemeProgressTable.init({
         defaultValue: false,
         allowNull: false
     }
-},{ sequelize: db, tableName: "theme_progress"});
+}, { sequelize: db, tableName: "theme_progress"});
 
 export { ThemeProgressTable }
