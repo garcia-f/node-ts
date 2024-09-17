@@ -20,7 +20,7 @@ class ThemeProgressService {
         return newThemeProgress;
     }
 
-    public async createAllThemeProgresssUser( newUser: Table ) {
+    public async createAllThemeProgressForUser( newUser: Table ) {
         return new Promise(async (resolve, reject) => {
             try {
                 for (let i = 1; i <= 25; i++) {

@@ -75,6 +75,13 @@ class ThemeController {
         try {
             const { id } = req.params;
             const deletedTheme = await ThemeService.deleteThemeModel( parseInt( id ) );
+            if(!deletedTheme) {
+                res.status(500).send({
+                    status: 500,
+                    message: "No se ha podido eliminar el tema."
+                });
+            }
+            res.status(200).send({ msg: "Tema eliminado correctamente", deletedTheme });
         } catch (err) {
             console.log(err);
         }

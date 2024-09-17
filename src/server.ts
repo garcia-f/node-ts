@@ -15,6 +15,8 @@ import observationRouter from "./routes/observation.routes";
 import unitProgressRouter from "./routes/unit_progress.routes";
 import themeProgressRouter from "./routes/theme_progress.routes";
 import exerciseProgressRouter from "./routes/exercise_progress.routes";
+import evaluationRouter from './routes/evaluation.routes';
+import authRoutes from './routes/auth.routes';
 
 
 class Server {
@@ -52,6 +54,8 @@ class Server {
         this.app.use('/unit_progress', unitProgressRouter);
         this.app.use('/theme_progress', themeProgressRouter);
         this.app.use('/exercise_progress', exerciseProgressRouter);
+        this.app.use('/evaluation', evaluationRouter);
+        this.app.use('/auth', authRoutes);
     }
 
     listen(): void {

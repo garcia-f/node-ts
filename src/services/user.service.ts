@@ -66,13 +66,13 @@ class UserService {
     }
 
     public async updateUser(id: number, data: User) {
-        const brand = await UserModel.update(data, { where: { id } });
-        return brand
+        const user = await UserModel.update(data, { where: { id } });
+        return user;
     }
 
     public async deleteUser(id: number) {
-        const brand = await UserModel.destroy({ where: { id } });
-        return brand
+        const user = await UserModel.destroy({ where: { id } });
+        return user;
     }
 
 }

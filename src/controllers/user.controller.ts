@@ -32,6 +32,7 @@ class UserController {
                     message: "No se ha encontrado el usuario"
                 });
             }
+            res.status(200).json(user);
         } catch (err) {
             console.log(err);
         }
